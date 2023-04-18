@@ -33,6 +33,8 @@ The [individual pipelines](https://github.com/STIRData/czech-br/tree/main/assets
 4. [Mapping of Czech companies to NACE codes](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/nace-mapping.jsonld)
 5. [Load data to Virtuoso](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/virtuoso.jsonld) - this needs to be adjusted to where the target triplestore instance is.
 
+The pipelines can be configured to run periodically using, e.g., `cron`, `curl` and the [LinkedPipes ETL API](https://github.com/linkedpipes/etl/wiki/Pipeline-execution-with-curl).
+
 ### Greek ...
 
 ### Belgian ...
@@ -41,6 +43,7 @@ The [individual pipelines](https://github.com/STIRData/czech-br/tree/main/assets
 A validation service profiling the published datasets with regards to the [STIRData specification] is deployed using LinkedPipes ETL and produces a validation report [available as a CSV file]().
 
 The [validation service pipeline]() is also directly deployable in a LinkedPipes ETL instance.
+Again, the validation pipeline can be configured to run periodically using, e.g., `cron`, `curl` and the [LinkedPipes ETL API](https://github.com/linkedpipes/etl/wiki/Pipeline-execution-with-curl).
 
 [Docker]: https://www.docker.com/
 [Docker Compose]: https://docs.docker.com/compose/
