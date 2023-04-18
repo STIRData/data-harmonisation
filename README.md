@@ -31,7 +31,7 @@ The [individual pipelines](https://github.com/STIRData/czech-br/tree/main/assets
 2. [Czech ontology to STIRData specification](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/ebg.jsonld)
 3. [SKOSification of CZ-NACE codes](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/cz-nace.jsonld)
 4. [Mapping of Czech companies to NACE codes](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/nace-mapping.jsonld)
-5. [Load data to Virtuoso](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/Load%20to%20Virtuoso.jsonld)
+5. [Load data to Virtuoso](https://raw.githubusercontent.com/STIRData/czech-br/main/assets/pipelines/Load%20to%20Virtuoso.jsonld) - this needs to be adjusted to where the target triplestore instance is.
 
 ### Greek ...
 
