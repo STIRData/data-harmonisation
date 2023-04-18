@@ -42,9 +42,9 @@ A validation service profiling the published datasets with regards to the [STIRD
 
 The [validation service pipeline]() is also directly deployable in a LinkedPipes ETL instance.
 
-[Docker]: "https://www.docker.com/"
-[Docker Compose]: "https://docs.docker.com/compose/"
-[LinkedPipes ETL]: "https://etl.linkedpipes.com>"
-[D2RML]: "http://islab.ntua.gr/ns/d2rml/"
-[OpenLink Virtuoso Open-Source]: "https://github.com/openlink/virtuoso-opensource"
-[STIRData specification]: "https://stirdata.github.io/data-specification/"
+[Docker]: https://www.docker.com/
+[Docker Compose]: https://docs.docker.com/compose/
+[LinkedPipes ETL]: https://etl.linkedpipes.com
+[D2RML]: http://islab.ntua.gr/ns/d2rml/
+[OpenLink Virtuoso Open-Source]: https://github.com/openlink/virtuoso-opensource
+[STIRData specification]: https://stirdata.github.io/data-specification/
