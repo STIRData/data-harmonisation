@@ -9,11 +9,11 @@ In this section, we describe how to deploy the data harmonisation tools using Do
 
 ### LinkedPipes ETL
 LinkedPipes ETL [Docker] based deployment requires [Docker Compose].
-Then, it can be deployed from the `main` branch to run on port `9080` like this:
+Then, it can be deployed from the `main` branch like this:
 ```
-curl https://raw.githubusercontent.com/linkedpipes/etl/main/docker-compose-github.yml | LP_ETL_PORT=9080 LP_VERSION=main docker-compose -f - up
+curl https://raw.githubusercontent.com/linkedpipes/etl/main/docker-compose.yml | docker-compose -f - up
 ```
-When deployed like this, LP-ETL runs on http://localhost:9080 and is ready to import pipelines.
+When deployed,LP-ETL runs on http://localhost:8080 and is ready to import pipelines.
 
 For custom deployments, see the [full deployment documentation](https://github.com/linkedpipes/etl/tree/main#installation-and-startup). Once deployed, see the [user documentation](https://etl.linkedpipes.com/documentation/) and [tutorials](https://etl.linkedpipes.com/tutorials/).
 The [documentation of the individual LP-ETL components](https://etl.linkedpipes.com/components/) is also available directly from the component's configuration dialog.
