@@ -42,7 +42,7 @@ The pipelines can be configured to run periodically using, e.g., `cron`, `curl` 
 ## Validation service
 A validation service profiling the published datasets with regards to the [STIRData specification] is deployed using LinkedPipes ETL and produces a validation report in [HTML](https://stirdata.opendata.cz/validation/), [RDF Turtle](https://stirdata.opendata.cz/validation/report.ttl) and [CSV](https://stirdata.opendata.cz/validation/report.csv).
 
-The [validation service pipeline]() is also directly deployable in a LinkedPipes ETL instance.
+The [validation service pipeline](validation.jsonld) is also directly deployable in a LinkedPipes ETL instance.
 Again, the validation pipeline can be configured to run periodically using, e.g., `cron`, `curl` and the [LinkedPipes ETL API](https://github.com/linkedpipes/etl/wiki/Pipeline-execution-with-curl).
 
 [Docker]: https://www.docker.com/
