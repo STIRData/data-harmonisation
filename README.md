@@ -26,27 +26,27 @@ You can find the docker image for d2rml here: [d2rml-cli](https://hub.docker.com
 
 To run it, use docker run command as following:
 
-`docker run -e "args=d2rml:test.ttl max_file_size:1000 output:test_out=axc" -v ${PWD}/DATA_DIRECTORY/:/data/ stirdata/d2rml-cli:latest`
-
+```
+docker run -e "args=d2rml:test.ttl max_file_size:1000 output:test_out=axc" -v ${PWD}/DATA_DIRECTORY/:/data/ stirdata/d2rml-cli:latest
+```
 
 The args parameter contains all the arguments that we want to pass to the cli tool. These are the following parameters:
 
+```
 d2rml: the D2RML document to be executed
-
 param: arguments provide parameter values in case the D2RML document is parametric
-
 output: arguments specify where the generated triples will be saved
-
 max-file-size: the maximum number of triples in each generated output file. The default is 10000
-
 temp-folder: a temp folder where downloaded files will be extracted if needed. It must exist.
+```
 
 The parameters should be given by providing the name and the value of each parameter.
 
 Also, the user needs to add a volume to make the folder containing input and output files accessible inside the docker container. You do this by using the -v flag in docker, giving the full path of the folder and mapping it to the /data/ folder of the docker container:
 
-`-v ${PWD}/DATA_DIRECTORY/:/data/`
-
+```
+-v ${PWD}/DATA_DIRECTORY/:/data/
+```
 
 ## Deployment of data harmonisation pipelines and mappings
 In this section, we describe how to deploy the data harmonisation workflows in the deployed tools.
