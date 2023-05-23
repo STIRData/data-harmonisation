@@ -33,11 +33,11 @@ docker run -e "args=d2rml:test.ttl max_file_size:1000 output:test_out=axc" -v ${
 The args parameter contains all the arguments that we want to pass to the cli tool. These are the following parameters:
 
 ```
-d2rml: the D2RML document to be executed
+d2rml: the D2RML document to be executed (absolute path or url)
 param: arguments provide parameter values in case the D2RML document is parametric
-output: arguments specify where the generated triples will be saved
-max-file-size: the maximum number of triples in each generated output file. The default is 10000
-temp-folder: a temp folder where downloaded files will be extracted if needed. It must exist.
+output: arguments specify where the generated triples will be saved (folder must exist)
+max_file_size: the maximum number of triples in each generated output file. The default is 10000
+temp_folder: a temp folder where downloaded files will be extracted if needed. It must exist.
 ```
 
 The parameters should be given by providing the name and the value of each parameter.
@@ -47,6 +47,23 @@ Also, the user needs to add a volume to make the folder containing input and out
 ```
 -v ${PWD}/DATA_DIRECTORY/:/data/
 ```
+
+Examples of STIRDATA executions:
+
+Execution of Greek business registry 'Business registry data mapping'
+(non parametric mapping):
+```
+docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/el/mapping/bdd4413c-45ec-47b8-b25a-56880a0a0b6e output:greece max-file-size:100000 temp_folder:tmp" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
+```
+
+Execution of Cypriot business registry 'GLEIF alignment mapping'
+(parametric mapping):
+
+```
+docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/cy/mapping/616e882e-b1d5-4171-8713-457a6d659828 param:ID_PATTERN=[0-9]+ param:RAC_CODE=RA000181 param:ORGANIZATION_PREFIX=http://ee.data.stirdata.eu/resource/organization/ output:cyprus_gleif temp_folder:tmp max_file_size:100000" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
+```
+
+In both examples, we will have our output and temp folders in a folder called "playground", which will be mounted inside the docker container executing d2rml.
 
 ## Deployment of data harmonisation pipelines and mappings
 In this section, we describe how to deploy the data harmonisation workflows in the deployed tools.
