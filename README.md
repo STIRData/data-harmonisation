@@ -53,17 +53,17 @@ Examples of STIRDATA executions:
 Execution of Greek business registry 'Business registry data mapping'
 (non parametric mapping):
 ```
-docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/el/mapping/bdd4413c-45ec-47b8-b25a-56880a0a0b6e output:greece max-file-size:100000 temp_folder:tmp" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
+docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/el/mapping/bdd4413c-45ec-47b8-b25a-56880a0a0b6e output:br=greece max_file_size:100000 temp_folder:tmp" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
 ```
 
 Execution of Cypriot business registry 'GLEIF alignment mapping'
 (parametric mapping):
 
 ```
-docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/cy/mapping/616e882e-b1d5-4171-8713-457a6d659828 param:ID_PATTERN=[0-9]+ param:RAC_CODE=RA000181 param:ORGANIZATION_PREFIX=http://ee.data.stirdata.eu/resource/organization/ output:cyprus_gleif temp_folder:tmp max_file_size:100000" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
+docker run -e "args=d2rml:https://stirdata-semantic.ails.ece.ntua.gr/api/content/cy/mapping/616e882e-b1d5-4171-8713-457a6d659828 param:ID_PATTERN=[0-9]+ param:RAC_CODE=RA000181 param:ORGANIZATION_PREFIX=http://ee.data.stirdata.eu/resource/organization/ output:br=cyprus_gleif temp_folder:tmp max_file_size:100000" -v ${PWD}/playground:/data/ stirdata/d2rml-cli:latest
 ```
 
-In both examples, we will have our output and temp folders in a folder called "playground", which will be mounted inside the docker container executing d2rml.
+Both examples use the folders called "br" and "tmp" as output and temp folders respectively, which should exist under the folder called "playground", which will be mounted inside the docker container executing d2rml. Inside the output folder, the names of all .trig generated files (if more than one, depending on the max_file_size) will begin with the prefix "greece" in the first example, and with the prefix "cyprus_gleif" in the second example
 
 ## Deployment of data harmonisation pipelines and mappings
 In this section, we describe how to deploy the data harmonisation workflows in the deployed tools.
